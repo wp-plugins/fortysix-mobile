@@ -1,6 +1,6 @@
 === FortySix Mobile ===
 Contributors: fortysix
-Tags: mobile, Japanese mobile
+Tags: Japanese mobile, Japanese, Mobile
 Requires at least: 2.8.6
 Tested up to: 2.8.6
 Stable tag: 1.0
@@ -9,7 +9,7 @@ Japanese mobile phone simple display plugin.
 
 == Description ==
 
-Japanese mobile telephone simple display plugin.
+Japanese mobile phone simple display plugin.
 Only a Japanese mobile phone can work.
 
 == Installation ==

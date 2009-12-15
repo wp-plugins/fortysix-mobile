@@ -2,12 +2,12 @@
 /*
 Plugin Name: FortySix Mobile
 Plugin URI: http://www.fortysix.co.jp/news/760/
-Description: Japanese mobile telephone simple display plugin.
+Description: Japanese mobile phone simple display plugin.
 Version: 1.0
 Author: iFortySix
 Author URI: http://www.fortysix.co.jp/
 */
-/*  Copyright 2009 FortySix Inc(email : support at fortysix.jp)
+/*  Copyright 2009 FortySix Inc.(email : support at fortysix.jp)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
