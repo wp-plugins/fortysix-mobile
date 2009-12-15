@@ -1,6 +1,6 @@
 === FortySix Mobile ===
 Contributors: fortysix
-Tags: Japanese mobile, Japanese, Mobile
+Tags: Japanese mobile, Japanese, Mobile, Japan, Keitai
 Requires at least: 2.8.6
 Tested up to: 2.8.6
 Stable tag: 1.0
