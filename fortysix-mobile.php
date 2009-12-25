@@ -143,11 +143,11 @@ function fsmb_option_mobile() {
 		if($_POST['ns1flg'] == ''){
 			fsmb_check_request($_POST['ns1ttl'],'表示するタイトル','text',false,30,$errct1,$errmg1);
 			fsmb_check_request($_POST['ns1cnt'],'表示する件数','int2',false,2,$errct1,$errmg1);
-			fsmb_check_request($_POST['ns1cat'],'表示するカテゴリー','int',true,1,$errct1,$errmg1);
+			fsmb_check_request($_POST['ns1cat'],'表示するカテゴリー','int',true,5,$errct1,$errmg1);
 		}else{
 			fsmb_check_request($_POST['ns1ttl'],'表示するタイトル','text',true,30,$errct1,$errmg1);
 			fsmb_check_request($_POST['ns1cnt'],'表示する件数','int2',true,2,$errct1,$errmg1);
-			fsmb_check_request($_POST['ns1cat'],'表示するカテゴリー','int',true,1,$errct1,$errmg1);
+			fsmb_check_request($_POST['ns1cat'],'表示するカテゴリー','int',true,5,$errct1,$errmg1);
 		}
 		fsmb_check_request($_POST['atelxx'],'電話番号','phone',false,20,$errct1,$errmg1);
 		fsmb_check_request($_POST['amailx'],'メールアドレス','mail',false,100,$errct1,$errmg1);
@@ -603,9 +603,9 @@ if(is_home()){
 			$catcdx = fsmb_change_out_db(get_option('fsmb_news1_category'),'int');
 			$cntxxx = fsmb_change_out_db(get_option('posts_per_page'),'int');
 			if($catcdx > 0){
-				$data2 = query_posts("cat=$catcdx&showposts=-1&offset=0&orderby=date&order=DESC"); // カテゴリー指定あり
+				$data2 = new WP_Query("cat=$catcdx&showposts=-1&offset=0&orderby=date&order=DESC"); // カテゴリー指定あり
 			}else{
-				$data2 = query_posts("showposts=-1&offset=0&orderby=date&order=DESC"); // すべて
+				$data2 = new WP_Query("showposts=-1&offset=0&orderby=date&order=DESC"); // すべて
 			}
 			$ns1max = count($data2);
 			if(isset($_GET['ns1pgx']) == false){
@@ -615,9 +615,9 @@ if(is_home()){
 				$ns1pgx = fsmb_change_request($_GET['ns1pgx'],'int');
 				$offset = ($ns1pgx - 1) * $cntxxx;
 			}
-			query_posts("cat=$catcdx&showposts=$cntxxx&offset=$offset&orderby=date&order=DESC");
+			$data = new WP_Query("cat=$catcdx&showposts=$cntxxx&offset=$offset&orderby=date&order=DESC");
 ?>
-<?php while (have_posts()) : the_post(); ?>
+<?php while ($data->have_posts()) : $data->the_post(); ?>
 <font size="<?php fsmb_change_html($sizexx); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a>(<?php the_time('y/m/d')?>)</font><br>
 <?php endwhile; ?>
 <br>
