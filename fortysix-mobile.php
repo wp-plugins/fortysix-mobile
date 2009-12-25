@@ -603,11 +603,11 @@ if(is_home()){
 			$catcdx = fsmb_change_out_db(get_option('fsmb_news1_category'),'int');
 			$cntxxx = fsmb_change_out_db(get_option('posts_per_page'),'int');
 			if($catcdx > 0){
-				$data2 = new WP_Query("cat=$catcdx&showposts=-1&offset=0&orderby=date&order=DESC"); // カテゴリー指定あり
+				$data = new WP_Query("cat=$catcdx&showposts=-1&offset=0&orderby=date&order=DESC"); // カテゴリー指定あり
 			}else{
-				$data2 = new WP_Query("showposts=-1&offset=0&orderby=date&order=DESC"); // すべて
+				$data = new WP_Query("showposts=-1&offset=0&orderby=date&order=DESC"); // すべて
 			}
-			$ns1max = count($data2);
+			$ns1max = count($data->posts);
 			if(isset($_GET['ns1pgx']) == false){
 				$ns1pgx = 1;
 				$offset = 0;
