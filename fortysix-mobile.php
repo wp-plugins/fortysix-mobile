@@ -660,7 +660,7 @@ if($mntopx == 0){
 	foreach($pages1 as $page1x) {
 		$pg1idx = fsmb_change_out_db($page1x->ID,'int');
 		$pg1ttl = fsmb_change_out_db($page1x->post_title,'text');
-		if($pg1idx != $mnoff1 && $pg1idx != $mnoff2 && $pg1idx != $mnoff && $pg1idx != $mnoff4 && $pg1idx != $mnoff53){
+		if($pg1idx != $mnoff1 && $pg1idx != $mnoff2 && $pg1idx != $mnoff && $pg1idx != $mnoff4 && $pg1idx != $mnoff5){
 ?>
 <font size="<?php fsmb_change_html($sizexx); ?>" color="#959FFF">■</font><a href="<?php echo get_page_link($pg1idx); ?>"><font size="<?php fsmb_change_html($sizexx); ?>"><?php fsmb_change_html($pg1ttl); ?></font></a><br>
 <?php
